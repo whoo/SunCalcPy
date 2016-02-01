@@ -158,7 +158,9 @@ if __name__ == "__main__":
             print ("day in      %15s"%datetime.utcfromtimestamp(sunrise-t).time())
         else:
             #Next Day
+            n=s.sunrise(r+timedelta(days=1))
+            nt=n.timestamp()
             print ("night since %15s"%datetime.utcfromtimestamp(t-sunset).time())
-            print ("day in      %15s"%datetime.utcfromtimestamp( s.sunrise(r+timedelta(days=1)).timestamp()-t).time() )
+            print ("Sun in  %40s %s"%(n,datetime.utcfromtimestamp(nt-t).time()) )
 
 
